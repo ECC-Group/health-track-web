@@ -68,6 +68,7 @@
     "no-unused-expressions": [2, {
       "allowShortCircuit": true
     }],
+    "react/no-array-index-key": "off",
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": [0, { "allow": "single"}],
     "linebreak-style": 0,

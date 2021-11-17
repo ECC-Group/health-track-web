@@ -32,7 +32,7 @@ const LandingPage = () => {
           Sign in
         </Button>
       </Form>
-      <p className="mt-5 mb-3 font-monospace text-muted">&copy; R.Murad</p>
+      <p className="mt-5 mb-3 font-monospace text-muted">&copy;Empty Coffee Cups</p>
     </div>
   );
 };
