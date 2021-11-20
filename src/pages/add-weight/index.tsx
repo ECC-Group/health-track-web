@@ -12,40 +12,7 @@ const AddWeight = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <header>
-        <div className="container-fluid">
-          <nav className="navbar navbar-expand-sm navbar-light">
-            <a href="/" className="navbar-brand font-monospace">Health Trackr</a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#toggleMobileMenu"
-              aria-controls="toggleMobileMenu"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-            <div className="collapse navbar-collapse" id="toggleMobileMenu">
-              <ul className="navbar-nav ms-auto">
-                <li>
-                  <a className="nav-link" href="adding">Add Weight</a>
-                </li>
-                <li>
-                  <a className="nav-link" href="list">Weight List</a>
-                </li>
-                <li>
-                  <a className="nav-link" href="/">Sign out</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      <div className="container d-flex flex-column align-items-center h-100">
+    <div className="container d-flex flex-column align-items-center h-100">
         <FaWeight size={220} className="mb-5" />
 
         <Form onSubmit={() => navigate('/dashboard')} className="form-floating w-75 m-auto">
@@ -62,8 +29,7 @@ const AddWeight = () => {
           >Add weight
           </Button>
         </Form>
-      </div>
-    </>
+    </div>
   );
 };
 
