@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
+
 import Header from 'templates/header';
 import Login from 'pages/login';
 import CreateUser from 'pages/create-user';
@@ -20,7 +21,9 @@ const MainRoutes = () => useRoutes([
 const Router = () => (
   <BrowserRouter>
     <Header />
-    <MainRoutes />
+    <div className="page-content">
+      <MainRoutes />
+    </div>
   </BrowserRouter>
 );
 

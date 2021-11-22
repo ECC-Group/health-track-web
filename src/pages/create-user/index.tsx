@@ -10,13 +10,14 @@ import './index.scss';
 
 const CreateUser = () => {
   const navigate = useNavigate();
+
   return (
     <div className="container text-center">
       <h1 className="brand mt-4 mb-5 font-monospace">Health Trackr</h1>
       <div className="row">
         <h3>Sign up</h3>
       </div>
-      <Form className="formbox">
+      <Form className="formbox pt-4">
         <Form.Group controlId="name">
           <FloatingLabel controlId="floatingInput" label="Name" className="mb-4">
             <Form.Control type="name" placeholder="Please enter your name" />

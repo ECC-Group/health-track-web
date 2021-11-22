@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import './index.scss';
 
 const LandingPage = () => (
-  <div className="container text-center">
+  <div className="container text-center landing-page-content">
     <h1>Landing Page</h1>
   </div>
 );
