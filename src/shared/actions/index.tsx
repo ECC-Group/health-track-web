@@ -5,6 +5,11 @@ const setUser = (command: IUser) => ({
   payload: command,
 });
 
+const clearUser = () => ({
+  type: 'CLEAR_USER',
+});
+
 export default {
   setUser,
+  clearUser,
 };
