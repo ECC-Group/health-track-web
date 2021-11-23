@@ -10,13 +10,13 @@ const Header = () => {
   const userName = localStorage.getItem('userName');
 
   return (
-    <div className="header-content">
+    <div className="header-content font-monospace">
       <Navbar bg="dark" className="navbar-dark" expand="lg">
         <Container>
           <Navbar.Brand onClick={() => navigate('/')}>Health Trackr</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="list-items">
               {userName
                 ? (
                   <>

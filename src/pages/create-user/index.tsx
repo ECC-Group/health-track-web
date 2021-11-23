@@ -17,7 +17,7 @@ const CreateUser = () => {
       <div className="row">
         <h3>Sign up</h3>
       </div>
-      <Form className="formbox pt-4">
+      <Form onSubmit={() => navigate('/dashboard')} className="form pt-4">
         <Form.Group controlId="name">
           <FloatingLabel controlId="floatingInput" label="Name" className="mb-4">
             <Form.Control type="name" placeholder="Please enter your name" />
