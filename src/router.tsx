@@ -19,12 +19,12 @@ const MainRoutes = () => useRoutes([
   ]);
 
 const Router = () => (
-  <BrowserRouter>
+  <>
     <Header />
     <div className="page-content">
       <MainRoutes />
     </div>
-  </BrowserRouter>
+  </>
 );
 
 export default Router;

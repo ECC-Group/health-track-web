@@ -73,6 +73,7 @@
     "react/jsx-one-expression-per-line": [0, { "allow": "single"}],
     "linebreak-style": 0,
     "import/no-unresolved": [0],
+    "no-return-assign": "off",
     "react/jsx-filename-extension": [0],
     "import/extensions": [
       "error",

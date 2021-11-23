@@ -2,21 +2,36 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { Login } from 'services/user';
-
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { Login, GetUser } from 'services/user';
+import Actions from 'shared/actions';
 
 import './index.scss';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [userId, setUserId] = useState<number | null>(parseInt(localStorage.getItem('userId') ?? '', 10));
 
   const executeLogin = (event: any) => {
     event.preventDefault();
-    Login(email, password).then((result) => {
-      navigate('/list');
+    setIsLoading(true);
+
+    Login(email, password).then((id) => {
+      GetUser(id).then((result) => {
+        dispatch(Actions.setUser(result));
+      });
+
+      localStorage.setItem('userId', id.toString());
+      setUserId(id);
+      setIsLoading(false);
+      navigate('/');
     });
   };
 
@@ -42,6 +57,14 @@ const LandingPage = () => {
         <Button type="submit" variant="primary">
           Sign in
         </Button>
+        {
+          isLoading
+          ? (
+              <div className="spinner-border text-success" role="status" />
+            )
+          // eslint-disable-next-line react/jsx-no-useless-fragment
+          : <></>
+        }
       </Form>
       <p className="mt-5 mb-3 font-monospace text-muted">&copy;Empty Coffee Cups</p>
     </div>
