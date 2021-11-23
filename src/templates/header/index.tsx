@@ -1,13 +1,19 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect } from 'react';
-import './index.scss';
+import { useSelector } from 'react-redux';
+
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from 'react-router-dom';
 
+import IAppState from 'interfaces/app-state';
+
+import './index.scss';
+
 const Header = () => {
   const navigate = useNavigate();
-  const userName = localStorage.getItem('userName');
+  const user = useSelector((state: IAppState) => state.user);
 
   return (
     <div className="header-content font-monospace">
@@ -17,7 +23,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="list-items">
-              {userName
+              {user.name !== ''
                 ? (
                   <>
                     <Nav.Link onClick={() => navigate('adding')}>Add Weight</Nav.Link>

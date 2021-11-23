@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { Create } from 'services/user';
+import { CreateUser as Create } from 'services/user';
 
 import { useNavigate } from 'react-router-dom';
 
