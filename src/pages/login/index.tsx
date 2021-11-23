@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Spinner } from 'react-bootstrap';
 
 import { Login, GetUser } from 'services/user';
 import Actions from 'shared/actions';
@@ -16,7 +17,7 @@ const LandingPage = () => {
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [userId, setUserId] = useState<number | null>(parseInt(localStorage.getItem('userId') ?? '', 10));
 
   const executeLogin = (event: any) => {
@@ -55,16 +56,28 @@ const LandingPage = () => {
         </div>
 
         <Button type="submit" variant="primary">
-          Sign in
-        </Button>
+
         {
           isLoading
           ? (
-              <div className="spinner-border text-success" role="status" />
+          <>
+            <span className="visually-hidden">Loading...</span>
+            <Spinner
+              as="span"
+              animation="border"
+              variant="info"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            <span>Loading...</span>
+          </>
             )
           // eslint-disable-next-line react/jsx-no-useless-fragment
-          : <></>
+          : <>Sign in</>
         }
+        </Button>
+
       </Form>
       <p className="mt-5 mb-3 font-monospace text-muted">&copy;Empty Coffee Cups</p>
     </div>
