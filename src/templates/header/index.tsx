@@ -19,6 +19,7 @@ const Header = () => {
   const user = useSelector((state: IAppState) => state.user);
   const handleSignOut = (event: any) => {
     event.preventDefault();
+    localStorage.removeItem('userId');
     dispatch(Actions.clearUser());
     navigate('login');
   };
