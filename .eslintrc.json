@@ -28,6 +28,7 @@
       "@typescript-eslint"
   ],
   "rules": {
+    "no-multiple-empty-spaces": "off",
     "react/no-unstable-nested-components": 0,
     "react/no-namespace": 0,
     "react/prefer-exact-props": 0,
