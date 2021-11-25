@@ -2,12 +2,15 @@ export const baseUrl = 'http://localhost:8080';
 
 export const userEndpoints = {
     CreateUser: `${baseUrl}/user`,
-    GetUser: (id: number): string => (`${baseUrl}/user/${id}`),
-    EditUser: (id: number): string => (`${baseUrl}/user/${id}`),
-    DeleteUser: (id: number): string => (`${baseUrl}/user/delete/${id}`),
+    GetUser: (userId: number): string => (`${baseUrl}/user/${userId}`),
+    EditUser: (userId: number): string => (`${baseUrl}/user/${userId}`),
+    DeleteUser: (userId: number): string => (`${baseUrl}/user/delete/${userId}`),
     Login: `${baseUrl}/user/login`,
 };
 
 export const weightEndpoints = {
-
+    GetWeightList: (userId: number): string => (`${baseUrl}/user/${userId}/weight`),
+    SetWeight: (userId: number): string => (`${baseUrl}/user/${userId}/weight`),
+    UpdateWeight: (userId: number, weightId: number): string => (`${baseUrl}/user/${userId}/weight/${weightId}`),
+    DeleteWeight: (userId: number, weightId: number): string => (`${baseUrl}/user/${userId}/weight/${weightId}`),
 };

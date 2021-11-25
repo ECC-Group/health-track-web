@@ -30,6 +30,7 @@
   "rules": {
     "no-multiple-empty-spaces": "off",
     "react/no-unstable-nested-components": 0,
+    "react/jsx-no-useless-fragment": "off",
     "react/no-namespace": 0,
     "react/prefer-exact-props": 0,
     "react/no-arrow-function-lifecycle": 0,

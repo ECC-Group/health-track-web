@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -17,7 +17,7 @@ const LandingPage = () => {
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userId, setUserId] = useState<number | null>(parseInt(localStorage.getItem('userId') ?? '', 10));
 
   const executeLogin = (event: any) => {
@@ -51,10 +51,6 @@ const LandingPage = () => {
           </FloatingLabel>
         </Form.Group>
 
-        <div className="checkbox mb-3">
-          <input type="checkbox" value="remember-me" /> Remember me
-        </div>
-
         <Button type="submit" variant="primary">
 
         {
@@ -69,6 +65,7 @@ const LandingPage = () => {
               size="sm"
               role="status"
               aria-hidden="true"
+              className="me-2"
             />
             <span>Loading...</span>
           </>

@@ -1,16 +1,16 @@
 import axios from 'axios';
 
-import { userEndpoints } from 'services/endpoints';
+import { weightEndpoints } from 'services/endpoints';
+import IWeight from 'interfaces/weight';
 
-export const GetWeightList = (email: string, password: string) => (
-  axios.post(userEndpoints.Login, { email, password })
-    .then((result) => result.data.userId)
-    .catch(() => (10))
+export const GetWeightList = (userId: number) => (
+  axios.get<IWeight[]>(weightEndpoints.GetWeightList(userId))
+    .then((result) => result.data)
+    .catch()
 );
 
-export const SetWeight = (name: string, password: string, email: string, age: number) => (
-  axios.post(userEndpoints.CreateUser, {
-    email, password, name, age,
-  }).then((result) => result.data.userId)
-    .catch(() => (10))
+export const SetWeight = (userId: number) => (
+  axios.post(weightEndpoints.SetWeight(userId))
+    .then((result) => result.data)
+    .catch()
 );
