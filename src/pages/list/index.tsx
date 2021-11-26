@@ -44,7 +44,7 @@ const List = () => {
                     <tr key={index}>
                       <td>{weight.insertedWeight}</td>
                       <td>{weight.kg}</td>
-                      <td><FaTrash onClick={() => DeleteWeight(weight)} /></td>
+                      <td><FaTrash style={{ cursor: 'pointger' }} onClick={() => DeleteWeight(weight)} /></td>
                     </tr>
                   ))
                 )
