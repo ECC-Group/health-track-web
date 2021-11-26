@@ -32,7 +32,7 @@ const AddWeight = () => {
 
   return (
     <div className="container d-flex flex-column align-items-center h-100">
-        <FaWeight size={220} className="mb-5" />
+        <FaWeight size={220} className="mb-5 mt-3" />
 
         <Form onSubmit={addWeightHandler} className="form-floating w-75 m-auto">
           <Form.Group>

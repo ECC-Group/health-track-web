@@ -34,7 +34,7 @@ const CreateUser = () => {
 
       localStorage.setItem('userId', id.toString());
       setIsLoading(false);
-      navigate('/dashboard');
+      navigate('/adding');
     });
   };
 

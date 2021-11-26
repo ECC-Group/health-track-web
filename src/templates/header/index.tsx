@@ -39,7 +39,12 @@ const Header = () => {
                     <Nav.Link onClick={() => navigate('list')}>Weight List</Nav.Link>
                   </Nav>
                   <Nav className="ms-auto">
-                    <p className="text-light d-inline align-middle">welcome {user.name}!</p>
+                    <Nav.Link
+                      className="text-white"
+                      style={{ cursor: 'unset' }}
+                      onClick={(click) => click.preventDefault()}
+                    >welcome {user.name}!
+                    </Nav.Link>
                     <Nav.Link onClick={handleSignOut}>Sign out</Nav.Link>
                   </Nav>
                 </>
