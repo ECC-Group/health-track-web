@@ -24,19 +24,18 @@ const CreateUser = () => {
   const createUser = (event: any) => {
     event.preventDefault();
     setIsLoading(true);
-    navigate('dashboard');
 
     console.log(name, email, password, age);
 
-    // Create(name, email, password, age).then((id) => {
-    //   GetUser(id).then((result) => {
-    //     dispatch(Actions.setUser(result));
-    //   });
+    Create(name, email, password, age).then((id) => {
+      GetUser(id).then((result) => {
+        dispatch(Actions.setUser(result));
+      });
 
-    //   localStorage.setItem('userId', id.toString());
-    //   setIsLoading(false);
-    //   navigate('/');
-    // });
+      localStorage.setItem('userId', id.toString());
+      setIsLoading(false);
+      navigate('/dashboard');
+    });
   };
 
   return (
