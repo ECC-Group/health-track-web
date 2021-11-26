@@ -22,7 +22,6 @@ const AddWeight = () => {
     const userId = parseInt(localStorage.getItem('userId') ?? '0', 10);
 
     SetWeight(userId, date, parseInt(weight, 10)).then((result) => {
-      console.log(result);
       navigate('/list');
     }).catch(
       (e) => {
