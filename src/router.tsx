@@ -6,6 +6,7 @@ import Login from 'pages/login';
 import CreateUser from 'pages/create-user';
 import Dashboard from 'pages/dashboard';
 import List from 'pages/list';
+import WeightChart from 'pages/weight-chart';
 import AddWeight from 'pages/add-weight';
 
 const MainRoutes = () => useRoutes([
@@ -13,6 +14,7 @@ const MainRoutes = () => useRoutes([
     { path: 'create-user', element: <CreateUser /> },
     { path: 'dashboard', element: <Dashboard /> },
     { path: 'list', element: <List /> },
+    { path: 'chart', element: <WeightChart /> },
     { path: 'adding', element: <AddWeight /> },
   ]);
 
