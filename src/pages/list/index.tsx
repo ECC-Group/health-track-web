@@ -45,7 +45,7 @@ const List = () => {
                 ? (
                   weightList.map((weight, index) => (
                     <tr key={index}>
-                      <td>{weight.insertedWeight}</td>
+                      <td>{new Date(weight.insertedWeight).toISOString().split('T')[0]}</td>
                       <td>{weight.kg}</td>
                       <td><FaTrash style={{ cursor: 'pointger' }} onClick={() => DeleteWeight(weight)} /></td>
                     </tr>
