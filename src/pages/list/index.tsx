@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
 import IWeight from 'interfaces/weight';
-import { GetWeightList } from 'services/weight';
-
-import listContent from './mock-data';
+import { GetWeightList, RemoveWeight } from 'services/weight';
 
 import './index.scss';
 
@@ -18,6 +16,13 @@ const List = () => {
       setWeightList(list);
     });
   }, []);
+
+  const DeleteWeight = (weight: IWeight) => {
+    RemoveWeight(userId, weight.weightId).then((result) => {
+      console.log('weight removed');
+      // show toast here maybe ?
+    });
+  };
 
   return (
     <div className="container justify-content-around pt-5">
@@ -35,11 +40,11 @@ const List = () => {
             {
               weightList.length > 0
                 ? (
-                  weightList.map((content, index) => (
+                  weightList.map((weight, index) => (
                     <tr key={index}>
-                      <td>{content.insertedWeight}</td>
-                      <td>{content.kg}</td>
-                      <td><FaTrash /></td>
+                      <td>{weight.insertedWeight}</td>
+                      <td>{weight.kg}</td>
+                      <td><FaTrash onClick={() => DeleteWeight(weight)} /></td>
                     </tr>
                   ))
                 )
