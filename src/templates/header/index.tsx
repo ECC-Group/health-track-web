@@ -37,6 +37,7 @@ const Header = () => {
                   <Nav>
                     <Nav.Link onClick={() => navigate('adding')}>Add Weight</Nav.Link>
                     <Nav.Link onClick={() => navigate('list')}>Weight List</Nav.Link>
+                    <Nav.Link onClick={() => navigate('chart')}>Weight Chart</Nav.Link>
                   </Nav>
                   <Nav className="ms-auto">
                     <p className="text-light d-inline align-middle">welcome {user.name}!</p>
