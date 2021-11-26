@@ -11,6 +11,5 @@ export const userEndpoints = {
 export const weightEndpoints = {
     GetWeightList: (userId: number): string => (`${baseUrl}/user/${userId}/weight`),
     SetWeight: (userId: number): string => (`${baseUrl}/user/${userId}/weight`),
-    UpdateWeight: (userId: number, weightId: number): string => (`${baseUrl}/user/${userId}/weight/${weightId}`),
     DeleteWeight: (userId: number, weightId: number): string => (`${baseUrl}/user/${userId}/weight/${weightId}`),
 };

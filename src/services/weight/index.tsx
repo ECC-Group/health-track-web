@@ -14,3 +14,9 @@ export const SetWeight = (userId: number, insertedWeight: string, kg: number) =>
     .then((result) => result.data)
     .catch()
 );
+
+export const RemoveWeight = (userId: number, weightId: number) => {
+  axios.delete(weightEndpoints.DeleteWeight(userId, weightId))
+    .then((result) => result.data)
+    .catch();
+};
