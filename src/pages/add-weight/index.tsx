@@ -12,13 +12,17 @@ import './index.scss';
 const AddWeight = () => {
   const navigate = useNavigate();
 
-  const [date, setDate] = useState(new Date());
-  const [weight, setWeight] = useState<number>(0);
+  const [date, setDate] = useState<string>('');
+  const [weight, setWeight] = useState<string>('');
 
   const addWeightHandler = (event: any) => {
     event.preventDefault();
-    console.log('add weight');
-    console.log(date);
+    const userId = parseInt(localStorage.getItem('userId') ?? '0', 10);
+
+    SetWeight(userId, date, parseInt(weight, 10)).then((result) => {
+      console.log(result);
+      navigate('/list');
+    });
   };
 
   return (
@@ -28,12 +32,12 @@ const AddWeight = () => {
         <Form onSubmit={addWeightHandler} className="form-floating w-75 m-auto">
           <Form.Group>
             <FloatingLabel controlId="floatingInput" label="Enter your weight(kg)" className="mb-4">
-              <Form.Control type="number" placeholder="name@example.com" />
+              <Form.Control type="number" value={weight} onChange={(change) => setWeight(change.target.value)} />
             </FloatingLabel>
           </Form.Group>
           <Form.Group>
             <FloatingLabel controlId="floatingInput" label="enter date" className="mb-4">
-                <Form.Control type="date" onChange={(change) => setDate(change.target.value)} value={date} />
+                <Form.Control type="date" value={date} onChange={(change) => setDate(change.target.value)} />
             </FloatingLabel>
           </Form.Group>
 
