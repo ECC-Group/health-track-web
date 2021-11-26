@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './index.scss';
 
-const AddWeight = () => {
+const Chart = () => {
   const navigate = useNavigate();
 
   return (
@@ -18,4 +18,4 @@ const AddWeight = () => {
   );
 };
 
-export default AddWeight;
+export default Chart;
