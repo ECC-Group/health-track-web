@@ -18,7 +18,10 @@ const LandingPage = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [userId, setUserId] = useState<number | null>(parseInt(localStorage.getItem('userId') ?? '', 10));
+  const [userId, setUserId] = useState<number | null>(parseInt(
+localStorage.getItem('userId') ?? '',
+    10,
+));
 
   const executeLogin = (event: any) => {
     event.preventDefault();
@@ -32,7 +35,7 @@ const LandingPage = () => {
       localStorage.setItem('userId', id.toString());
       setUserId(id);
       setIsLoading(false);
-      navigate('/');
+      navigate('/list');
     });
   };
 

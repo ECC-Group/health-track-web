@@ -12,7 +12,7 @@ import AddWeight from 'pages/add-weight';
 const MainRoutes = () => useRoutes([
     { path: '/', element: <LandingPage /> },
     { path: 'login', element: <Login /> },
-    { path: 'createuser', element: <CreateUser /> },
+    { path: 'create-user', element: <CreateUser /> },
     { path: 'dashboard', element: <Dashboard /> },
     { path: 'list', element: <List /> },
     { path: 'adding', element: <AddWeight /> },

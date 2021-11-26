@@ -1,7 +1,7 @@
 export const baseUrl = 'http://localhost:8080';
 
 export const userEndpoints = {
-    CreateUser: `${baseUrl}/user`,
+    CreateUser: `${baseUrl}/create-user`,
     GetUser: (userId: number): string => (`${baseUrl}/user/${userId}`),
     EditUser: (userId: number): string => (`${baseUrl}/user/${userId}`),
     DeleteUser: (userId: number): string => (`${baseUrl}/user/delete/${userId}`),

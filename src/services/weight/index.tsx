@@ -9,8 +9,8 @@ export const GetWeightList = (userId: number) => (
     .catch()
 );
 
-export const SetWeight = (userId: number) => (
-  axios.post(weightEndpoints.SetWeight(userId))
+export const SetWeight = (userId: number, insertedWeight: Date, kg: number) => (
+  axios.post(weightEndpoints.SetWeight(userId), { insertedWeight, kg })
     .then((result) => result.data)
     .catch()
 );

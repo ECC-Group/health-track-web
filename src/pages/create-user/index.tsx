@@ -24,6 +24,7 @@ const CreateUser = () => {
   const createUser = (event: any) => {
     event.preventDefault();
     setIsLoading(true);
+    navigate('/dashboard');
 
     console.log(name, email, password, age);
 

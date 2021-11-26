@@ -14,6 +14,7 @@ const List = () => {
 
   useEffect(() => {
     GetWeightList(userId).then((list) => {
+      console.log(list);
       setWeightList(list);
     });
   }, []);

@@ -47,7 +47,7 @@ const Header = () => {
               : (
                 <Nav className="ms-auto">
                   <Nav.Link onClick={() => navigate('/login')}>Sign in</Nav.Link>
-                  <Nav.Link onClick={() => navigate('/createuser')}>Sign up</Nav.Link>
+                  <Nav.Link onClick={() => navigate('/create-user')}>Sign up</Nav.Link>
                 </Nav>
               )}
           </Navbar.Collapse>
