@@ -17,7 +17,6 @@ const AddWeight = () => {
   const [weight, setWeight] = useState<string>('');
   const [showToast, setShowToast] = useState<boolean>(false);
 
-
   const addWeightHandler = (event: any) => {
     event.preventDefault();
     const userId = parseInt(localStorage.getItem('userId') ?? '0', 10);
@@ -28,7 +27,7 @@ const AddWeight = () => {
     }).catch(
       (e) => {
         setShowToast(true);
-      }
+      },
     );
   };
 
@@ -55,7 +54,7 @@ const AddWeight = () => {
           </Button>
         </Form>
         <Toast
-          show={showToast)
+          show={showToast}
           title="Weight failed to add"
           message="Please try again"
           onClose={() => setShowToast(false)}
