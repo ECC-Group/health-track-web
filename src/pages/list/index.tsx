@@ -10,17 +10,20 @@ const List = () => {
   const [weightList, setWeightList] = useState<IWeight[]>([]);
   const [userId, setUserId] = useState<number>(parseInt(localStorage.getItem('userId') ?? '', 10));
 
-  useEffect(() => {
+  const refreshList = () => {
     GetWeightList(userId).then((list) => {
       console.log(list);
       setWeightList(list);
     });
+  };
+
+  useEffect(() => {
+    refreshList();
   }, []);
 
   const DeleteWeight = (weight: IWeight) => {
     RemoveWeight(userId, weight.weightId).then((result) => {
-      console.log('weight removed');
-      // show toast here maybe ?
+      refreshList();
     });
   };
 

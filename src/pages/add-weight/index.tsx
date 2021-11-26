@@ -6,6 +6,7 @@ import { FaWeight } from 'react-icons/fa';
 import { SetWeight } from 'services/weight';
 
 import { useNavigate } from 'react-router-dom';
+import Toast from 'shared/components/toast';
 
 import './index.scss';
 
@@ -14,15 +15,19 @@ const AddWeight = () => {
 
   const [date, setDate] = useState<string>('');
   const [weight, setWeight] = useState<string>('');
+  const [showToast, setShowToast] = useState<boolean>(false);
 
   const addWeightHandler = (event: any) => {
     event.preventDefault();
     const userId = parseInt(localStorage.getItem('userId') ?? '0', 10);
 
     SetWeight(userId, date, parseInt(weight, 10)).then((result) => {
-      console.log(result);
       navigate('/list');
-    });
+    }).catch(
+      (e) => {
+        setShowToast(true);
+      },
+    );
   };
 
   return (
@@ -47,6 +52,12 @@ const AddWeight = () => {
           >Add weight
           </Button>
         </Form>
+        <Toast
+          show={showToast}
+          title="Weight failed to add"
+          message="Please try again"
+          onClose={() => setShowToast(false)}
+        />
     </div>
   );
 };
