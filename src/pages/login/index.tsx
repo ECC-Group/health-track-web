@@ -83,7 +83,6 @@ const LandingPage = () => {
       </Form>
       <p className="mt-5 mb-3 font-monospace text-muted">&copy;Empty Coffee Cups</p>
       <Toast
-        variant=""
         show={showToast}
         title="Login failed"
         message="Wrong email or password. Please try again."
