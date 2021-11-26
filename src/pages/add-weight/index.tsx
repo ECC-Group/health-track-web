@@ -33,7 +33,7 @@ const AddWeight = () => {
           </Form.Group>
           <Form.Group>
             <FloatingLabel controlId="floatingInput" label="enter date" className="mb-4">
-                <Form.Control type="date" onChange={(change) => setDate(change.target.value)} value={date} />
+                {/* <Form.Control type="date" onChange={(change) => setDate(change.target.value)} value={date} /> */}
             </FloatingLabel>
           </Form.Group>
 

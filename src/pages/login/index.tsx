@@ -8,6 +8,7 @@ import { Spinner } from 'react-bootstrap';
 
 import { Login, GetUser } from 'services/user';
 import Actions from 'shared/actions';
+import Toast from 'shared/components/toast';
 
 import './index.scss';
 
@@ -18,10 +19,7 @@ const LandingPage = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [userId, setUserId] = useState<number | null>(parseInt(
-localStorage.getItem('userId') ?? '',
-    10,
-));
+  const [showToast, setShowToast] = useState<boolean>(false);
 
   const executeLogin = (event: any) => {
     event.preventDefault();
@@ -33,10 +31,14 @@ localStorage.getItem('userId') ?? '',
       });
 
       localStorage.setItem('userId', id.toString());
-      setUserId(id);
       setIsLoading(false);
       navigate('/list');
-    });
+    }).catch(
+      (e) => {
+        setIsLoading(false);
+        setShowToast(true);
+      },
+    );
   };
 
   return (
@@ -80,6 +82,13 @@ localStorage.getItem('userId') ?? '',
 
       </Form>
       <p className="mt-5 mb-3 font-monospace text-muted">&copy;Empty Coffee Cups</p>
+      <Toast
+        variant=""
+        show={showToast}
+        title="Login failed"
+        message="Wrong email or password. Please try again."
+        onClose={() => setShowToast(false)}
+      />
     </div>
   );
 };

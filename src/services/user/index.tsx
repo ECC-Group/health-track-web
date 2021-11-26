@@ -6,7 +6,6 @@ import IUser from 'interfaces/user';
 export const Login = (email: string, password: string) => (
   axios.post(userEndpoints.Login, { email, password })
     .then((result) => result.data.userId)
-    .catch()
 );
 
 export const CreateUser = (name: string, password: string, email: string, age: number) => (
